@@ -1,3 +1,29 @@
+#' HockeyRef Draft URL Scraper
+#'
+#' Returns data from all players in the given draft year url
+#' @param website the url of the draft year webpage on hockey-reference.com.
+#' @param ages 2-length vector for the age ranges desired. first number is lower-bound, second number is upper-bound. This will be applied to all players.
+#' @param playerStats vector of the wanted player stats. possible values:
+#'     stateSep - seperate goals, assists, and points based on strength (PP, SH, EV)
+#'     Cor = Corsi,
+#'     Fen = Fenwick,
+#'     oiS = On-Ice shooting and save percentage,
+#'     PDO = PDO,
+#'     IceTime = Ice time,
+#'     Awards = Awards with placement,
+#'     pmBreak = plus/minus breakdown (GF, GA, etc.),
+#'     PS = HockeyRef's point shares metric,
+#'     xGF = Expected Goals For percentage
+#' @param goalieStats vector of the wanted goalie stats. possible values:
+#'     QS = quality starts metric
+#'     GSAA = goals saved above average
+#'     Scoring = goals/assists/points/etc.
+#'     Awards - Awards with placement
+#' @param Season Determines if regular season data, playoff data, or both will be returned for all the players. Currently only 'R' works.
+#' @param sepTeam Boolean about whether you want rows for every team a player played on in the NHL in a give year, or if you just want the cumulative production combining the two teams.
+#' @return data frame (or list of data frames) with data from all the players drafted in the given year.
+#' @export
+
 Ref_Draft_Scraper <- function(website, ages = c(17, 50), playerStats = "all", goalieStats = "all", Season = "R", sepTeam = F) {
   html <- website %>%
     readLines()
