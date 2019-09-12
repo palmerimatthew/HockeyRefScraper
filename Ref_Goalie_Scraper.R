@@ -1,3 +1,18 @@
+#' HockeyRef Player Scraper
+#'
+#' Returns data from a player given their url.
+#' @param website the url of the goalie's webpage on hockey-reference.com.
+#' @param ages 2-length vector for the age ranges desired. first number is lower-bound, second number is upper-bound.
+#' @param goalieStats vector of the wanted goalie stats. possible values:
+#'     QS = quality starts metric
+#'     GSAA = goals saved above average
+#'     Scoring = goals/assists/points/etc.
+#'     Awards - Awards with placement
+#' @param Season Determines if regular season data, playoff data, or both will be returned for all the players. 'R' for Regular Season, 'P' for Playoffs, 'RP' for both Regular Season and Playoffs
+#' @param sepTeam Boolean about whether you want rows for every team a goalie played on in the NHL in a give year, or if you just want the cumulative production combining the two teams.
+#' @return data frame (or list of data frames) with data the desired goalie.
+#' @export
+
 Ref_Goalie_Scraper <- function(website, ages = c(17,50), Stats, Season = "R", sepTeam = F) {
   if (Stats == "all") {
     Stats = c("QS", "GSAA", "Scoring", "Awards")
