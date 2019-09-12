@@ -4,17 +4,17 @@ Version: 0.0.0.9000
 Authors@R: 
     person(given = "Matthew",
            family = "Palmeri",
-           email = "matthewpalmeri@outlook.com"
+           email = "matthewpalmeri@outlook.com",
            role = c("aut", "cre"))
 Description: This package contains functions useful for gathering information off of hockey-reference.com.
     Included are functions to gather information for an individual player, or for a draft. 
 Imports:
-   dplyr (>= 0.8.3)
-    magrittr (>= 1.5)
-    rvest (>= 0.3.4)
-    stringr (>= 1.4.0)
-    tidyr (>= 0.8.3)
-    wrapr(>= 1.8.9)
+   dplyr (>= 0.8.3),
+    magrittr (>= 1.5),
+    rvest (>= 0.3.4),
+    stringr (>= 1.4.0),
+    tidyr (>= 0.8.3),
+    wrapr(>= 1.8.9),
     XML (>= 3.98-1.20)
 License: MIT | file LICENSE
 Encoding: UTF-8
