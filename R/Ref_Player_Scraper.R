@@ -153,9 +153,9 @@ Ref_Player_Scraper <- function(website, ages = c(17,50), Stats = "all", Season =
     
     #getting name of player
     name <- website %>%
-      read_html() %>%
-      html_nodes('h1') %>%
-      html_text()
+      xml2::read_html() %>%
+      rvest::html_nodes('h1') %>%
+      rvest::html_text()
     generalStats <- cbind(Name = name, generalStats)
     
     columns_wanted <- generalStats %>%
