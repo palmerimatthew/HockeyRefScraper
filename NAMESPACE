@@ -2,3 +2,4 @@
 
 export(Ref_Goalie_Scraper)
 export(Ref_Player_Scraper)
+export(smart_rbind)
